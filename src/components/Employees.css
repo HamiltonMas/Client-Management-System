@@ -1,0 +1,296 @@
+/* src/components/Employees.css */
+.employees-management {
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+.section-header {
+  margin-bottom: 24px;
+}
+
+.section-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.section-header p {
+  color: #64748b;
+}
+
+.employees-actions {
+  margin-bottom: 24px;
+  text-align: right;
+}
+
+.btn-add-employee {
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.btn-add-employee:hover {
+  background: #172554;
+}
+
+.employees-table-container {
+  overflow-x: auto;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #eef2f6;
+}
+
+.employees-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.employees-table th,
+.employees-table td {
+  padding: 14px 12px;
+  text-align: left;
+  border-bottom: 1px solid #eef2f6;
+}
+
+.employees-table th {
+  background: #f8fafc;
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 13px;
+}
+
+.employees-table tr:hover {
+  background: #f8fafc;
+}
+
+.employee-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-edit,
+.btn-payslip,
+.btn-delete {
+  padding: 4px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.btn-edit {
+  background: #e0e7ff;
+  color: #1e3a8a;
+}
+
+.btn-edit:hover {
+  background: #c7d2fe;
+}
+
+.btn-payslip {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.btn-payslip:hover {
+  background: #bbf7d0;
+}
+
+.btn-delete {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.btn-delete:hover {
+  background: #fecaca;
+}
+
+/* Modal styling (reuse from UserManagement.css, but add if missing) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.modal-content h3 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.employee-summary {
+  background: #f8fafc;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.employee-summary p {
+  margin: 6px 0;
+}
+
+.btn-toggle-salary {
+  background: #475569;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-left: 12px;
+  transition: background 0.2s;
+}
+
+.btn-toggle-salary:hover {
+  background: #334155;
+}
+
+.salary-hidden {
+  color: #94a3b8;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-actions button:first-child {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.modal-actions button:last-child {
+  background: #1e3a8a;
+  color: white;
+}
+
+/* Document upload styles */
+.pending-docs-list {
+  list-style: none;
+  margin-top: 8px;
+  padding-left: 0;
+}
+.pending-docs-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8fafc;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-bottom: 4px;
+}
+.pending-docs-list button {
+  background: #fee2e2;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 2px 6px;
+}
+.existing-docs-note {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 6px;
+}
+.documents-list {
+  list-style: none;
+  padding: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+.documents-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eef2f6;
+}
+.documents-list li div {
+  display: flex;
+  gap: 12px;
+}
+.documents-list a {
+  color: #1e3a8a;
+  text-decoration: none;
+}
+.documents-list button {
+  background: #fee2e2;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 2px 8px;
+}
+.btn-docs {
+  background: #e0e7ff;
+  color: #1e3a8a;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 0 4px;
+}
+.btn-docs:hover {
+  background: #c7d2fe;
+}
+
+@media (max-width: 768px) {
+  .employee-actions {
+    flex-direction: column;
+  }
+  .employees-table th,
+  .employees-table td {
+    padding: 8px;
+  }
+}

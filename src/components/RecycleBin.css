@@ -1,0 +1,229 @@
+/* src/components/RecycleBin.css */
+.recycle-bin {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.bin-info {
+  margin-bottom: 40px;
+}
+
+.info-card {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  padding: 30px;
+  border-radius: 16px;
+  border: 2px solid #94a3b8;
+  box-shadow: 0 6px 20px rgba(148, 163, 184, 0.1);
+}
+
+.info-card h3 {
+  color: #334155;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.info-card p {
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.deleted-clients-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1000px;
+}
+
+.deleted-clients-table thead {
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  border-bottom: 2px solid #94a3b8;
+}
+
+.deleted-clients-table th {
+  padding: 20px;
+  text-align: left;
+  font-weight: 700;
+  color: #334155;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.deleted-clients-table tbody tr {
+  border-bottom: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  background: #ffffff;
+}
+
+.deleted-clients-table tbody tr:hover {
+  background: #f8fafc;
+  transform: scale(1.002);
+}
+
+.deleted-clients-table td {
+  padding: 20px;
+  color: #475569;
+  font-size: 15px;
+  vertical-align: middle;
+}
+
+.days-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  min-width: 90px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.days-remaining-high {
+  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+  color: #065f46;
+  border: 1px solid #10b981;
+}
+
+.days-remaining-medium {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  color: #92400e;
+  border: 1px solid #f59e0b;
+}
+
+.days-remaining-low {
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+  color: #991b1b;
+  border: 1px solid #ef4444;
+}
+
+.deleted-row td:first-child {
+  position: relative;
+}
+
+.deleted-row td:first-child::before {
+  content: '🗑️';
+  position: absolute;
+  left: -25px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.btn-restore {
+  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+  color: #065f46;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
+  min-width: 90px;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+  border: 1px solid #10b981;
+}
+
+.btn-restore:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.2);
+  background: linear-gradient(135deg, #a7f3d0, #6ee7b7);
+}
+
+.btn-permanent-delete {
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+  color: #991b1b;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
+  min-width: 140px;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.15);
+  border: 1px solid #ef4444;
+}
+
+.btn-permanent-delete:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.2);
+  background: linear-gradient(135deg, #fecaca, #fca5a5);
+}
+
+.warning-message {
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid #94a3b8;
+  margin-top: 30px;
+  text-align: center;
+  font-weight: 600;
+  color: #334155;
+  font-size: 16px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(148, 163, 184, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(148, 163, 184, 0);
+  }
+}
+
+.countdown-timer {
+  font-size: 28px;
+  font-weight: 800;
+  color: #334155;
+  text-align: center;
+  margin: 30px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.countdown-label {
+  font-size: 14px;
+  color: #64748b;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.bin-stats {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 0;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-item h4 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #334155;
+  margin-bottom: 10px;
+}
+
+.stat-item p {
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}  
