@@ -258,175 +258,172 @@ const Login = ({ onLogin, authError, clearError }) => {
             )}
           </button>
 
-          {/* ===== TEST CREDENTIALS PANEL ===== */}
-          {process.env.NODE_ENV !== "production" && (
-            <div
+          {/* ===== TEST CREDENTIALS PANEL (visible in production) ===== */}
+          <div
+            style={{
+              marginTop: "1rem",
+              border: "1px dashed #c9a227",
+              borderRadius: "8px",
+              background: "#fffdf5",
+              overflow: "hidden",
+            }}
+          >
+            <button
+              type="button"
+              onClick={() => setShowTestCreds((v) => !v)}
               style={{
-                marginTop: "1rem",
-                border: "1px dashed #c9a227",
-                borderRadius: "8px",
-                background: "#fffdf5",
-                overflow: "hidden",
+                width: "100%",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                padding: "0.6rem 0.9rem",
+                background: "transparent",
+                border: "none",
+                cursor: "pointer",
+                fontWeight: 600,
+                color: "#7a5c00",
+                fontSize: "0.9rem",
               }}
             >
-              <button
-                type="button"
-                onClick={() => setShowTestCreds((v) => !v)}
+              <span>🧪 Test Login Credentials</span>
+              <span>{showTestCreds ? "▲" : "▼"}</span>
+            </button>
+
+            {showTestCreds && (
+              <div
                 style={{
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  padding: "0.6rem 0.9rem",
-                  background: "transparent",
-                  border: "none",
-                  cursor: "pointer",
-                  fontWeight: 600,
-                  color: "#7a5c00",
-                  fontSize: "0.9rem",
+                  padding: "0 0.9rem 0.8rem",
+                  fontSize: "0.85rem",
+                  color: "#3a3a3a",
                 }}
               >
-                <span>🧪 Test Login Credentials</span>
-                <span>{showTestCreds ? "▲" : "▼"}</span>
-              </button>
+                <p style={{ margin: "0 0 0.6rem", color: "#7a5c00" }}>
+                  Click an account to auto-fill the form:
+                </p>
 
-              {showTestCreds && (
+                {/* Admin */}
                 <div
                   style={{
-                    padding: "0 0.9rem 0.8rem",
-                    fontSize: "0.85rem",
-                    color: "#3a3a3a",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    gap: "0.5rem",
+                    padding: "0.45rem 0.6rem",
+                    borderRadius: "6px",
+                    background: "#fdf3d6",
+                    marginBottom: "0.4rem",
                   }}
                 >
-                  <p style={{ margin: "0 0 0.6rem", color: "#7a5c00" }}>
-                    Click an account to auto-fill the form:
-                  </p>
-
-                  {/* Admin */}
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      gap: "0.5rem",
-                      padding: "0.45rem 0.6rem",
-                      borderRadius: "6px",
-                      background: "#fdf3d6",
-                      marginBottom: "0.4rem",
-                    }}
-                  >
+                  <div>
+                    <strong>👑 Admin</strong>
                     <div>
-                      <strong>👑 Admin</strong>
-                      <div>
-                        <code>nathasha</code> / <code>admin123</code>
-                      </div>
+                      <code>nathasha</code> / <code>admin123</code>
                     </div>
-                    <button
-                      type="button"
-                      onClick={() => fillCredentials("nathasha", "admin123")}
-                      style={{
-                        padding: "0.3rem 0.7rem",
-                        borderRadius: "4px",
-                        border: "1px solid #c9a227",
-                        background: "#c9a227",
-                        color: "#fff",
-                        cursor: "pointer",
-                        fontSize: "0.8rem",
-                        whiteSpace: "nowrap",
-                      }}
-                    >
-                      Use
-                    </button>
                   </div>
-
-                  {/* Attorney */}
-                  <div
+                  <button
+                    type="button"
+                    onClick={() => fillCredentials("nathasha", "admin123")}
                     style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      gap: "0.5rem",
-                      padding: "0.45rem 0.6rem",
-                      borderRadius: "6px",
-                      background: "#f4f6fa",
-                      marginBottom: "0.4rem",
+                      padding: "0.3rem 0.7rem",
+                      borderRadius: "4px",
+                      border: "1px solid #c9a227",
+                      background: "#c9a227",
+                      color: "#fff",
+                      cursor: "pointer",
+                      fontSize: "0.8rem",
+                      whiteSpace: "nowrap",
                     }}
                   >
-                    <div>
-                      <strong>⚖️ Attorney</strong>
-                      <div>
-                        <code>Hamilton</code> / <code>UndBun67@</code>
-                      </div>
-                    </div>
-                    <button
-                      type="button"
-                      onClick={() => fillCredentials("Hamilton", "UndBun67@")}
-                      style={{
-                        padding: "0.3rem 0.7rem",
-                        borderRadius: "4px",
-                        border: "1px solid #4a6fa5",
-                        background: "#4a6fa5",
-                        color: "#fff",
-                        cursor: "pointer",
-                        fontSize: "0.8rem",
-                        whiteSpace: "nowrap",
-                      }}
-                    >
-                      Use
-                    </button>
-                  </div>
-
-                  {/* Paralegal */}
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      gap: "0.5rem",
-                      padding: "0.45rem 0.6rem",
-                      borderRadius: "6px",
-                      background: "#f2f7f2",
-                    }}
-                  >
-                    <div>
-                      <strong>📋 Paralegal</strong>
-                      <div>
-                        <code>paralegal</code> / <code>paralegal123</code>
-                      </div>
-                    </div>
-                    <button
-                      type="button"
-                      onClick={() =>
-                        fillCredentials("paralegal", "paralegal123")
-                      }
-                      style={{
-                        padding: "0.3rem 0.7rem",
-                        borderRadius: "4px",
-                        border: "1px solid #4a7c59",
-                        background: "#4a7c59",
-                        color: "#fff",
-                        cursor: "pointer",
-                        fontSize: "0.8rem",
-                        whiteSpace: "nowrap",
-                      }}
-                    >
-                      Use
-                    </button>
-                  </div>
-
-                  <p
-                    style={{
-                      margin: "0.6rem 0 0",
-                      fontSize: "0.75rem",
-                      color: "#8a8a8a",
-                    }}
-                  >
-                    ⚠️ For testing only — remove this panel before production.
-                  </p>
+                    Use
+                  </button>
                 </div>
-              )}
-            </div>
-          )}
+
+                {/* Attorney */}
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    gap: "0.5rem",
+                    padding: "0.45rem 0.6rem",
+                    borderRadius: "6px",
+                    background: "#f4f6fa",
+                    marginBottom: "0.4rem",
+                  }}
+                >
+                  <div>
+                    <strong>⚖️ Attorney</strong>
+                    <div>
+                      <code>Hamilton</code> / <code>UndBun67@</code>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => fillCredentials("Hamilton", "UndBun67@")}
+                    style={{
+                      padding: "0.3rem 0.7rem",
+                      borderRadius: "4px",
+                      border: "1px solid #4a6fa5",
+                      background: "#4a6fa5",
+                      color: "#fff",
+                      cursor: "pointer",
+                      fontSize: "0.8rem",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    Use
+                  </button>
+                </div>
+
+                {/* Paralegal */}
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    gap: "0.5rem",
+                    padding: "0.45rem 0.6rem",
+                    borderRadius: "6px",
+                    background: "#f2f7f2",
+                  }}
+                >
+                  <div>
+                    <strong>📋 Paralegal</strong>
+                    <div>
+                      <code>paralegal</code> / <code>paralegal123</code>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => fillCredentials("paralegal", "paralegal123")}
+                    style={{
+                      padding: "0.3rem 0.7rem",
+                      borderRadius: "4px",
+                      border: "1px solid #4a7c59",
+                      background: "#4a7c59",
+                      color: "#fff",
+                      cursor: "pointer",
+                      fontSize: "0.8rem",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    Use
+                  </button>
+                </div>
+
+                <p
+                  style={{
+                    margin: "0.6rem 0 0",
+                    fontSize: "0.75rem",
+                    color: "#8a8a8a",
+                  }}
+                >
+                  ⚠️ For testing only — remove this panel before public
+                  production.
+                </p>
+              </div>
+            )}
+          </div>
           {/* ===== END TEST CREDENTIALS PANEL ===== */}
 
           <div className="security-info">
